@@ -14,10 +14,15 @@ Win-PS2EXE
 
 ## Utilitaires
 
+### download-clipboard
+
+Télécharge une liste de liens préalablement copiée dans le presse-papiers
+
+
 ### extract-image-from-folders
 
-Copie la première images de chaque dossier à la racine en renommant celle-ci du nom du dossier.
+Copie la première images de chaque dossier à la racine en renommant celle-ci du nom du dossier
 
 ### unzipper
 
-Sélectionne un dossier, et dézippe toutes les archives .zip.
+Dézippe toutes les archives d'un dossier dans leur sous-dossiers respectifs
