@@ -8,7 +8,7 @@ function Select-FolderDialog {
     }
     return $null
 }
-
+Write-Output "Veuillez sélectionner un dossier où télécharger les fichiers des url contenues dans le presse-papiers."
 # Ouvrir une fenêtre de dialogue pour sélectionner le dossier de destination
 $destinationFolder = Select-FolderDialog
 
