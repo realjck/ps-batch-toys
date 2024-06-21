@@ -1,19 +1,17 @@
 Add-Type -AssemblyName System.Windows.Forms
 
-Write-Output "Veuillez sélectionner un dossier contenant des archives à dézipper."
+Write-Output "Please select a folder containing archives to unzip."
 
-# Créer une instance de FolderBrowserDialog
+# Create a FolderBrowserDialog instance
 $folderBrowser = New-Object System.Windows.Forms.FolderBrowserDialog
-
-# Afficher la boîte de dialogue de sélection de dossier
 $dialogResult = $folderBrowser.ShowDialog()
 
-# Vérifier si l'utilisateur a appuyé sur le bouton "OK"
+# Check if "OK"
 if ($dialogResult -eq [System.Windows.Forms.DialogResult]::OK) {
-	# Récupérer le chemin du dossier sélectionné
+	# Get path
 	$selectedFolder = $folderBrowser.SelectedPath
 	
-	Write-Output "Veuillez sélectionner le dossier destination."
+	Write-Output "Please select the destination folder."
 	
 	$dialogResult = $folderBrowser.ShowDialog()
 	
@@ -21,7 +19,7 @@ if ($dialogResult -eq [System.Windows.Forms.DialogResult]::OK) {
 		
 		$selectedTargetFolder = $folderBrowser.SelectedPath
 	
-		# dézipper les .zip
+		# Unzip
 		Get-ChildItem -Path $selectedFolder -Filter "*.zip" | ForEach-Object {
 			$zipFile = $_.FullName
 			$zipName = $_.BaseName
@@ -35,9 +33,9 @@ if ($dialogResult -eq [System.Windows.Forms.DialogResult]::OK) {
 		}
 		
 	} else {
-		Write-Output "Opération annulée."
+		Write-Output "Operation canceled."
 	}
 } else {
-  Write-Output "Opération annulée."
+  Write-Output "Operation canceled."
 }
 

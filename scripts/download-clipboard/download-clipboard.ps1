@@ -8,39 +8,36 @@ function Select-FolderDialog {
     }
     return $null
 }
-Write-Output "Veuillez sélectionner un dossier où télécharger les fichiers des url contenues dans le presse-papiers."
-# Ouvrir une fenêtre de dialogue pour sélectionner le dossier de destination
+Write-Output "Please select a folder to download the URL files contained in the clipboard."
+# Open a dialog window to select the destination folder
 $destinationFolder = Select-FolderDialog
 
 if ([string]::IsNullOrWhiteSpace($destinationFolder)) {
-    Write-Host "Aucun dossier sélectionné. Le script va s'arrêter."
+    Write-Host "No folder selected. The script will stop."
     exit
 }
 
-# Vérifier si le dossier existe, sinon le créer
+# Check if the folder exists, if not create it
 if (-Not (Test-Path -Path $destinationFolder)) {
     New-Item -ItemType Directory -Path $destinationFolder
 }
 
-# Lire les URLs depuis le presse-papiers
+# Read URLs from clipboard
 $clipboardContent = Get-Clipboard -Raw
 
-# Séparer le contenu du presse-papiers en lignes individuelles
+# Separate lines
 $urls = $clipboardContent -split "`r`n"
 
-# Télécharger chaque fichier à partir des URLs
+# Download each file
 foreach ($url in $urls) {
     if ($url -ne '') {
         try {
-            # Obtenir le nom du fichier à partir de l'URL
             $fileName = [System.IO.Path]::GetFileName($url)
-            
-            # Télécharger le fichier
             $filePath = Join-Path -Path $destinationFolder -ChildPath $fileName
             Invoke-WebRequest -Uri $url -OutFile $filePath
-            Write-Host "Téléchargé : $url" -ForegroundColor Green
+            Write-Host "Downloaded: $url" -ForegroundColor Green
         } catch {
-            Write-Host "Erreur lors du téléchargement de : $url`n$_"
+            Write-Host "**ERROR** : $url`n$_"
         }
     }
 }

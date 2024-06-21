@@ -1,28 +1,18 @@
-# Real Tools
+# ps-batch-toys
 
-## Powershell
+**Utility scripts in Powershell**
 
-**Scripts utilitaires en Powershell**
+This directory contains some utilities which process batches of files. These programs were created with generative AI, requiring relatively few fixes. To compile the scripts into executables, please first install [PS2EXE](https://github.com/MScholtes/PS2EXE), and then run the `build.ps1` script at the root.
 
-Conversion .exe avec [PS2EXE](https://github.com/MScholtes/PS2EXE) avec interface graphique :
-```ps
-Win-PS2EXE
-```
-*Décocher 'Compile a window graphic program' si non nécessaire.*
+## download-clipboard
 
----
-
-## Utilitaires
-
-### download-clipboard
-
-Télécharge une liste de liens préalablement copiée dans le presse-papiers
+Downloads a list of links previously copied to the clipboard
 
 
-### extract-image-from-folders
+## extract-image-from-folders
 
-Copie la première images de chaque dossier à la racine en renommant celle-ci du nom du dossier
+Copy the first image of each folder to the root by renaming it with the name of the folder
 
-### unzipper
+## unzipper
 
-Dézippe toutes les archives d'un dossier dans leur sous-dossiers respectifs
+Unzip all archives in a folder into their respective subfolders
