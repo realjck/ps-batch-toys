@@ -7,6 +7,7 @@ ps2exe -inputFile '.\scripts\unzipper\unzipper.ps1' -outputFile '.\dist\unzipper
 
 ps2exe -inputFile '.\scripts\extract-image-from-folders\extract-image-from-folders.ps1' -outputFile '.\dist\extract-image-from-folders.exe' -x64 -iconFile '.\scripts\extract-image-from-folders\extract-image-from-folders.ico' -title 'extract-image-from-folders' -description 'extract-image-from-folders' -company 'devjck' -product 'extract-image-from-folders' -copyright 'devjck' -version '0.1.0' -longPaths -configFile
 
+ps2exe -inputFile '.\scripts\youtube-downloader\youtube-downloader.ps1' -outputFile '.\dist\youtube-downloader.exe' -x64 -iconFile '.\scripts\youtube-downloader\youtube-downloader.ico' -title 'youtube-downloader' -description 'youtube-downloader' -company 'devjck' -product 'youtube-downloader' -copyright 'devjck' -version '0.1.0' -longPaths -configFile
 
 ## template
 

@@ -20,3 +20,7 @@ Copy the first image of each folder to the root by renaming it with the name of 
 ## unzipper.exe
 
 Unzip all archives in a folder into their respective subfolders
+
+## youtube-downloader.exe
+
+Ask for a URL and select a folder where you want to download the video or the entire channel (needs [yt-dlp](https://github.com/yt-dlp/yt-dlp))
