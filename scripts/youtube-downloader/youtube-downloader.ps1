@@ -32,8 +32,10 @@ $folderBrowser.RootFolder = [System.Environment+SpecialFolder]::MyComputer
 if ($folderBrowser.ShowDialog() -eq [System.Windows.Forms.DialogResult]::OK) {
     $destinationFolder = $folderBrowser.SelectedPath
     
-    # Se placer dans le dossier sélectionné
-    Set-Location -Path $destinationFolder
+    # Créer le dossier s'il n'existe pas (au cas où)
+    if (-not (Test-Path -Path $destinationFolder)) {
+        New-Item -ItemType Directory -Path $destinationFolder -Force | Out-Null
+    }
     
     # Exécuter la commande yt-dlp avec une fenêtre de progression
     $progressForm = New-Object System.Windows.Forms.Form
@@ -51,16 +53,21 @@ if ($folderBrowser.ShowDialog() -eq [System.Windows.Forms.DialogResult]::OK) {
     $progressForm.Refresh()
     
     try {
-        # Exécuter yt-dlp
-        yt-dlp -f "bv*+ba" -o "%(title)s.%(ext)s" $url
+        # Exécuter yt-dlp en spécifiant explicitement le dossier de destination
+        & yt-dlp -f "bv*+ba" -o "$destinationFolder\%(title)s.%(ext)s" $url
         
-        # Ouvrir l'explorateur dans le dossier de destination
-        explorer $destinationFolder
-        
-        [System.Windows.Forms.MessageBox]::Show("Téléchargement terminé avec succès!", "Terminé", "OK", "Information")
+        # Vérifier si le téléchargement a réussi
+        if ($LASTEXITCODE -eq 0) {
+            # Ouvrir l'explorateur dans le dossier de destination
+            explorer $destinationFolder
+            
+            [System.Windows.Forms.MessageBox]::Show("Téléchargement terminé avec succès!", "Terminé", "OK", "Information")
+        } else {
+            [System.Windows.Forms.MessageBox]::Show("Erreur lors du téléchargement (code de sortie: $LASTEXITCODE)", "Erreur", "OK", "Error")
+        }
     }
     catch {
-        [System.Windows.Forms.MessageBox]::Show("Erreur lors du téléchargement : $_", "Erreur", "OK", "Error")
+        [System.Windows.Forms.MessageBox]::Show("Erreur lors du téléchargement : $($_.Exception.Message)", "Erreur", "OK", "Error")
     }
     finally {
         $progressForm.Close()
