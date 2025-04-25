@@ -9,6 +9,8 @@ ps2exe -inputFile '.\scripts\extract-image-from-folders\extract-image-from-folde
 
 ps2exe -inputFile '.\scripts\youtube-downloader\youtube-downloader.ps1' -outputFile '.\dist\youtube-downloader.exe' -x64 -iconFile '.\scripts\youtube-downloader\youtube-downloader.ico' -title 'youtube-downloader' -description 'youtube-downloader' -company 'devjck' -product 'youtube-downloader' -copyright 'devjck' -version '0.1.0' -longPaths -configFile
 
+ps2exe -inputFile '.\scripts\url-monitoring\url-monitoring.ps1' -outputFile '.\dist\url-monitoring.exe' -x64 -iconFile '.\scripts\url-monitoring\url-monitoring.ico' -title 'url-monitoring' -description 'url-monitoring' -company 'devjck' -product 'url-monitoring' -copyright 'devjck' -version '0.1.0' -longPaths -configFile
+
 ## template
 
 # ps2exe -inputFile '.\scripts\________\________.ps1' -outputFile '.\dist\________.exe' -x64 -iconFile '.\scripts\________\________.ico' -title '________' -description '________' -company 'devjck' -product '________' -copyright 'devjck' -version '0.1.0' -longPaths -configFile

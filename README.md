@@ -17,6 +17,10 @@ Downloads a list of links previously copied to the clipboard
 
 Copy the first image of each folder to the root by renaming it with the name of the folder
 
+## url-monitoring.exe
+
+Checks URLs from a text file, tests their connectivity, and displays colored status results and server errors
+
 ## unzipper.exe
 
 Unzip all archives in a folder into their respective subfolders
