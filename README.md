@@ -2,7 +2,7 @@
 
 **Utility scripts in Powershell**
 
-This directory contains some utilities which process batches of files. These programs were created with generative AI, requiring relatively few fixes. To compile the scripts into executables, please first install [PS2EXE](https://github.com/MScholtes/PS2EXE), and then run the build.ps1 script at the root.
+This directory contains some utilities for Windows which process batch tasks. To compile the scripts into executables, please first install [PS2EXE](https://github.com/MScholtes/PS2EXE), and then run the build.ps1 script at the root.
 
 ```PowerShell
 # Build executables
