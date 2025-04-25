@@ -54,7 +54,7 @@ if ($folderBrowser.ShowDialog() -eq [System.Windows.Forms.DialogResult]::OK) {
     
     try {
         # Exécuter yt-dlp en spécifiant explicitement le dossier de destination
-        & yt-dlp -f "bv*+ba" -o "$destinationFolder\%(title)s.%(ext)s" $url
+        & yt-dlp --cookies youtube_cookies.txt -f "bv*+ba" -o "$destinationFolder\%(title)s.%(ext)s" $url
         
         # Vérifier si le téléchargement a réussi
         if ($LASTEXITCODE -eq 0) {
