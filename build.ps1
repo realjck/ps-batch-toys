@@ -11,6 +11,15 @@ ps2exe -inputFile '.\scripts\youtube-downloader\youtube-downloader.ps1' -outputF
 
 ps2exe -inputFile '.\scripts\url-monitoring\url-monitoring.ps1' -outputFile '.\dist\url-monitoring.exe' -x64 -iconFile '.\scripts\url-monitoring\url-monitoring.ico' -title 'url-monitoring' -description 'url-monitoring' -company 'devjck' -product 'url-monitoring' -copyright 'devjck' -version '0.1.0' -longPaths -configFile
 
-## template
+ps2exe -inputFile '.\scripts\list-files-to-clipboard\list-files-to-clipboard.ps1' -outputFile '.\dist\list-files-to-clipboard.exe' -x64 -iconFile '.\scripts\list-files-to-clipboard\list-files-to-clipboard.ico' -title 'list-files-to-clipboard' -description 'list-files-to-clipboard' -company 'devjck' -product 'list-files-to-clipboard' -copyright 'devjck' -version '0.1.0' -longPaths -configFile -noConsole
 
+## TEMPLATES
+## ---------
+
+# with console:
+## -----------
 # ps2exe -inputFile '.\scripts\________\________.ps1' -outputFile '.\dist\________.exe' -x64 -iconFile '.\scripts\________\________.ico' -title '________' -description '________' -company 'devjck' -product '________' -copyright 'devjck' -version '0.1.0' -longPaths -configFile
+
+# without console:
+# ---------------
+# ps2exe -inputFile '.\scripts\________\________.ps1' -outputFile '.\dist\________.exe' -x64 -iconFile '.\scripts\________\________.ico' -title '________' -description '________' -company 'devjck' -product '________' -copyright 'devjck' -version '0.1.0' -longPaths -configFile -noConsole
