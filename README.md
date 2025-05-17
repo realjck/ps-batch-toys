@@ -27,7 +27,7 @@ Checks URLs from a text file, tests their connectivity, and displays colored sta
 
 ## unzipper.exe
 
-Unzip all archives in a folder into their respective subfolders
+Unzip all archives .zip and .7z in a folder into their respective subfolders
 
 ## youtube-downloader.exe
 
