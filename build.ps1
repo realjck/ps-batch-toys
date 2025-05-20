@@ -13,6 +13,8 @@ ps2exe -inputFile '.\scripts\url-monitoring\url-monitoring.ps1' -outputFile '.\d
 
 ps2exe -inputFile '.\scripts\list-files-to-clipboard\list-files-to-clipboard.ps1' -outputFile '.\dist\list-files-to-clipboard.exe' -x64 -iconFile '.\scripts\list-files-to-clipboard\list-files-to-clipboard.ico' -title 'list-files-to-clipboard' -description 'list-files-to-clipboard' -company 'devjck' -product 'list-files-to-clipboard' -copyright 'devjck' -version '0.1.0' -longPaths -configFile -noConsole
 
+ps2exe -inputFile '.\scripts\file-renamer\file-renamer.ps1' -outputFile '.\dist\file-renamer.exe' -x64 -iconFile '.\scripts\file-renamer\file-renamer.ico' -title 'file-renamer' -description 'file-renamer' -company 'devjck' -product 'file-renamer' -copyright 'devjck' -version '0.1.0' -longPaths -configFile
+
 ## TEMPLATES
 ## ---------
 

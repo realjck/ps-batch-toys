@@ -17,17 +17,21 @@ Downloads a list of links previously copied to the clipboard
 
 Copy the first image of each folder to the root by renaming it with the name of the folder
 
+## file-renamer.exe
+
+Renames all files in a folder from a list of names in a text file
+
 ## list-files-to-clipboard.exe
 
 Copy list of files in a directory to clipboard
 
-## url-monitoring.exe
-
-Checks URLs from a text file, tests their connectivity, and displays colored status results and server errors
-
 ## unzipper.exe
 
 Unzip all archives .zip and .7z in a folder into their respective subfolders
+
+## url-monitoring.exe
+
+Checks URLs from a text file, tests their connectivity, and displays colored status results and server errors
 
 ## youtube-downloader.exe
 
